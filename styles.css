@@ -27,11 +27,8 @@ table {
     margin: 0 auto;
 }
 
-tr {
+tr, td {
     height: 20px;
-}
-
-td {
     width: 20px;
 }
 
