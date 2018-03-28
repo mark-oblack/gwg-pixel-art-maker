@@ -3,12 +3,6 @@
 
 // When size is submitted by the user, call makeGrid()
 
-$(document).ready(function() {
-	$("tr, td").hover(function() {
-		$(this).css("background-color", "black");
-	});
-});
-
 function makeGrid() {
 	//clears current grid each time user hits submit
 	$("#pixelCanvas").html('');
@@ -24,3 +18,18 @@ function makeGrid() {
 		$(".table-row").append("<td></td>");
 	}
 }
+
+$("input[type='submit']").click(function(e) {
+	e.preventDefault(); //Required to avoid submit and page reload
+	makeGrid();
+});
+
+$("input[type='reset']").click(function(e) {
+	e.preventDefault(); //Required to avoid submit and page reload
+	$("#pixelCanvas").html('');
+});
+
+$("table").on("click", "td", function() { //debating about making this mouseover or click
+	var color = document.getElementById("colorPicker").value;
+	$(this).css("background-color", color);
+});
