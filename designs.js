@@ -3,6 +3,10 @@
 
 // When size is submitted by the user, call makeGrid()
 
+//UX Details
+//Set a max value for grid size and enforce it
+//Add eraser function
+
 function makeGrid() {
 	//clears current grid each time user hits submit
 	$("#pixelCanvas").html('');
@@ -29,7 +33,27 @@ $("input[type='reset']").click(function(e) {
 	$("#pixelCanvas").html('');
 });
 
-$("table").on("click", "td", function() { //debating about making this mouseover or click
-	var color = document.getElementById("colorPicker").value;
-	$(this).css("background-color", color);
+// $("table").on("mouseover", "td", function() { //debating about making this mouseover or click
+// 	var color = document.getElementById("colorPicker").value;
+// 	$(this).css("background-color", color);
+// });
+
+$("#paint").click(function() {
+	$("table").on("click", "td", function() { //debating about making this mouseover or click
+		var color = document.getElementById("colorPicker").value;
+		$(this).css("background-color", color);
+	});
+
 });
+
+$("#erase").click(function() {
+	$("table").on("click", "td", function() { //debating about making this mouseover or click
+		$(this).css("background-color", "white");
+	});
+});
+
+
+
+
+
+
