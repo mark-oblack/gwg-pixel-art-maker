@@ -22,9 +22,14 @@ td {
     border: 1px solid black;
 }
 
+td:hover {
+    background-color: #dfe6e9;
+}
+
 table {
     border-collapse: collapse;
     margin: 0 auto;
+    margin-top: 10px;
 }
 
 tr, td {
