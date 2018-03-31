@@ -9,14 +9,16 @@
         <h1>Lab: Pixel Art Maker</h1>
 
         <h2>Choose Grid Size</h2>
+        <p>The maximum size for the height and width is 50 pixels.</p>
         <form id="sizePicker">
             Grid Height:
-            <input type="number" id="inputHeight" name="height" min="1" value="10">
+            <input type="number" id="inputHeight" name="height" min="1" max="50" value="10">
             Grid Width:
-            <input type="number" id="inputWidth" name="width" min="1" value="10">
+            <input type="number" id="inputWidth" name="width" min="1" max="50" value="10">
             <input type="submit" name="submit">
-            <input type="reset" name="Reset">
+            <!-- <input type="reset" name="Reset"> -->
         </form>
+        <p id="output"></p>
 
         <h2>Pick A Color</h2>
         <input type="color" id="colorPicker">

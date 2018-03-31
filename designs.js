@@ -1,11 +1,8 @@
-// Select color input
-// Select size input
-
-// When size is submitted by the user, call makeGrid()
-
 //UX Details
 //Set a max value for grid size and enforce it
-//Clear existing grid instead of deleting entire table
+//With clear grid, can we remove reset button?
+//Hide grid size behind a settings menu
+
 var height;
 var width;
 var color;
@@ -18,13 +15,18 @@ function makeGrid(x,y) {
 	//sets height and width based on user input
 	height = document.getElementById("inputHeight").value;
 	width = document.getElementById("inputWidth").value;
-	//adds number of rows equal to given height
-	for(var i = 0; i < height; i++) {
-		canvas.append("<tr class='table-row'></tr>");
-	}
-	//adds table data element to each row based on given width
-	for(var j = 0; j < width; j++) {
-		$(".table-row").append("<td></td>");
+	//check to see if values entered is greater than 50
+	if(height > 50 || width > 50) {
+		document.getElementById("output").innerHTML = "One or more of the sizes you have entered exceeds the limit of 50 pixels. Please enter a new value.";
+	} else {
+		//adds number of rows equal to given height
+		for(var i = 0; i < height; i++) {
+			canvas.append("<tr class='table-row'></tr>");
+		}
+		//adds table data element to each row based on given width
+		for(var j = 0; j < width; j++) {
+			$(".table-row").append("<td></td>");
+		}
 	}
 }
 
@@ -73,10 +75,10 @@ $("input[type='submit']").click(function(e) {
 	makeGrid();
 });
 
-$("input[type='reset']").click(function(e) {
-	e.preventDefault(); //Required to avoid submit and page reload
-	canvas.html(''); //removes tr/td elements within table element
-});
+// $("input[type='reset']").click(function(e) {
+// 	e.preventDefault(); //Required to avoid submit and page reload
+// 	canvas.html(''); //removes tr/td elements within table element
+// });
 
 $("#paint").click(function() {
 	paint();
