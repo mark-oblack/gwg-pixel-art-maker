@@ -9,7 +9,7 @@ var color;
 var isClicked;
 var canvas = $("#pixelCanvas");
 
-function makeGrid(x,y) {
+function makeGrid() {
 	//clears current grid each time user hits submit
 	canvas.html('');
 	//sets height and width based on user input
@@ -75,11 +75,6 @@ $("input[type='submit']").click(function(e) {
 	makeGrid();
 });
 
-// $("input[type='reset']").click(function(e) {
-// 	e.preventDefault(); //Required to avoid submit and page reload
-// 	canvas.html(''); //removes tr/td elements within table element
-// });
-
 $("#paint").click(function() {
 	paint();
 });
@@ -97,7 +92,7 @@ $(document).on('mouseup', function(){
 	isClicked = false;
 });
 
-makeGrid(10,10); //load a 10x10 grid on page load
+makeGrid(); //load a 15x15 grid on page load
 paint(); //paint function runs on page load so user does not have to click Paint button initially
 
 

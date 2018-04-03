@@ -1,35 +1,41 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Pixel Art Maker!</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pixel Art Maker</title>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Monoton">
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" type="text/css" href="css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
     </head>
     <body>
-        <h1>Lab: Pixel Art Maker</h1>
-
-        <h2>Choose Grid Size</h2>
-        <p>The maximum size for the height and width is 50 pixels.</p>
-        <form id="sizePicker">
-            Grid Height:
-            <input type="number" id="inputHeight" name="height" min="1" max="50" value="10">
-            Grid Width:
-            <input type="number" id="inputWidth" name="width" min="1" max="50" value="10">
-            <input type="submit" name="submit">
-            <!-- <input type="reset" name="Reset"> -->
-        </form>
-        <p id="output"></p>
-
-        <h2>Pick A Color</h2>
-        <input type="color" id="colorPicker">
-
-        <h2>Design Canvas</h2>
-        <button id="paint">Paint</button>
-        <button id="erase">Erase</button>
-        <button id="clear">Clear Grid</button>
-        <table id="pixelCanvas"></table>
+        <div class="wrapper">
+            <h1>Pixel Art Maker</h1>
+            <!-- <h2>Choose Grid Size</h2> -->
+            <p>The maximum size for the height and width is 50 pixels.</p>
+            <form id="sizePicker">
+                Grid Height:
+                <input type="number" id="inputHeight" name="height" min="1" max="50" value="10">
+                Grid Width:
+                <input type="number" id="inputWidth" name="width" min="1" max="50" value="10">
+                <input type="submit" name="submit">
+            </form>
+            <p id="output"></p>
+            <!-- <h2>Pick A Color</h2> -->
+            <div class="canvas-flex">
+                <div class="button-flex">
+                    <input type="color" id="colorPicker" value="#fd9644" class="canvas-button">
+                    <!-- <h2>Design Canvas</h2> -->
+                    <input type="image" src="assets/paint-icon.png" id="paint" class="canvas-button">
+                    <input type="image" src="assets/eraser-icon.png" id="erase" class="canvas-button">
+                    <input type="image" src="assets/clear-icon.png" id="clear" class="canvas-button">
+                    <input type="image" src="assets/grid-icon.png" id="grid-settings" class="canvas-button">
+                </div>
+                <table id="pixelCanvas"></table>
+            </div>
+        </div>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="designs.js"></script>
+        <script src="js/designs.js"></script>
     </body>
 </html>
