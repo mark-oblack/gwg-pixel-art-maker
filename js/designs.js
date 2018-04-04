@@ -16,7 +16,7 @@ function makeGrid() {
 	height = document.getElementById("inputHeight").value;
 	width = document.getElementById("inputWidth").value;
 	//check to see if values entered is greater than 50
-	if(height > 50 || width > 50) {
+	if(height > 40 || width > 40) {
 		document.getElementById("output").innerHTML = "One or more of the sizes you have entered exceeds the limit of 50 pixels. Please enter a new value.";
 	} else {
 		//adds number of rows equal to given height
@@ -70,9 +70,15 @@ function erase() {
 	});
 }
 
+//run when a user releases the mouse
+$(document).on('mouseup', function(){
+	isClicked = false;
+});
+
 $("input[type='submit']").click(function(e) {
 	e.preventDefault(); //Required to avoid submit and page reload
 	makeGrid();
+	$(".settings-menu").hide();
 });
 
 $("#paint").click(function() {
@@ -87,13 +93,17 @@ $("#clear").click(function() {
 	canvas.find("td").css("background-color", "#fff");
 });
 
-//run when a user releases the mouse
-$(document).on('mouseup', function(){
-	isClicked = false;
+$("#grid-settings").click(function() {
+	$(".settings-menu").show();
+});
+
+$("#hide").click(function() {
+	$(".settings-menu").hide();
 });
 
 makeGrid(); //load a 15x15 grid on page load
 paint(); //paint function runs on page load so user does not have to click Paint button initially
+$(".settings-menu").hide(); //hide settings menu on page load
 
 
 

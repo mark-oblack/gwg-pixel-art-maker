@@ -35,6 +35,7 @@ table {
     border-collapse: collapse;
     margin: 0 auto;
     margin-top: 10px;
+    margin-bottom: 20px;
 }
 
 tr, td {
@@ -43,8 +44,25 @@ tr, td {
 }
 
 input[type=number] {
-    width: 6em;
+    width: 3em;
 }
+
+.settings-menu {
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    /*height: 100%;
+    width: 100%;*/
+    height: 300px;
+    width: 300px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
 
 
 
@@ -64,7 +82,10 @@ Flex Styles
     display: flex;
     flex-direction: row-reverse;
     justify-content: center;
-    margin-top: 20px;
+    /*margin-top: 350px;
+    position: absolute;
+    height: 300px;
+    width: 300px;*/
 }
 
 .button-flex {
