@@ -3,11 +3,13 @@
 //With clear grid, can we remove reset button?
 //Hide grid size behind a settings menu
 
-var height;
-var width;
-var color;
-var isClicked;
-var canvas = $("#pixelCanvas");
+let height;
+let width;
+let color;
+let isClicked;
+let canvas = $("#pixelCanvas");
+
+$(".settings-menu").hide(); //hide settings menu on page load
 
 function makeGrid() {
 	//clears current grid each time user hits submit
@@ -20,11 +22,11 @@ function makeGrid() {
 		document.getElementById("output").innerHTML = "One or more of the sizes you have entered exceeds the limit of 50 pixels. Please enter a new value.";
 	} else {
 		//adds number of rows equal to given height
-		for(var i = 0; i < height; i++) {
+		for(let i = 0; i < height; i++) {
 			canvas.append("<tr class='table-row'></tr>");
 		}
 		//adds table data element to each row based on given width
-		for(var j = 0; j < width; j++) {
+		for(let j = 0; j < width; j++) {
 			$(".table-row").append("<td></td>");
 		}
 	}
@@ -103,7 +105,6 @@ $("#hide").click(function() {
 
 makeGrid(); //load a 15x15 grid on page load
 paint(); //paint function runs on page load so user does not have to click Paint button initially
-$(".settings-menu").hide(); //hide settings menu on page load
 
 
 

@@ -1,23 +1,29 @@
 /*================================
+Google Fonts
+================================*/
+
+@import url('https://fonts.googleapis.com/css?family=Varela+Round');
+
+
+
+/*================================
 General Styles
 ================================*/
 
 body {
     background-color: #21D4FD;
     background-image: linear-gradient(330deg, #21D4FD 0%, #B721FF 100%);
+    font-family: 'Varela Round', sans-serif;
     height: 100%;
     min-height: 100vh;
     text-align: center;
 }
 
 h1 {
+    color: #fff;
     font-family: Monoton;
-    font-size: 2.5em;
-    margin: 0.2em;
-}
-
-h2 {
-    margin: 1em 0 0.25em;
+    font-size: 2em;
+    margin: 25px 0;
 }
 
 table,
@@ -34,7 +40,6 @@ td:hover {
 table {
     border-collapse: collapse;
     margin: 0 auto;
-    margin-top: 10px;
     margin-bottom: 20px;
 }
 
@@ -46,23 +51,6 @@ tr, td {
 input[type=number] {
     width: 3em;
 }
-
-.settings-menu {
-    background: #fff;
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    /*height: 100%;
-    width: 100%;*/
-    height: 300px;
-    width: 300px;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-}
-
 
 
 
@@ -107,6 +95,76 @@ Flex Styles
 
 
 
+/*================================
+Settings Menu
+================================*/
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    width: 90%;
+}
+
+.settings-menu {
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    text-align: left;
+    height: 300px;
+    width: 300px;
+}
+
+.settings-menu h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.settings-menu p {
+    margin: 0 auto;
+    margin-bottom: 10px;
+    width: 90%;
+}
+
+
+#hide {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-content: flex-end;
+}
+
+.far {
+    color: #4b4b4b;
+    cursor: pointer;
+    font-size: 2em;
+    padding: 5px;
+}
+
+.far:hover {
+    color: #ff3838;
+    transition: ease 0.2s;
+}
+
+input[type=submit] {
+    background-color: #45aaf2;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    display: block;
+    margin: 0 auto;
+    padding: 5px;
+    width: 5em;
+}
 
 
 
