@@ -6,6 +6,8 @@
 let height;
 let width;
 let color;
+let bgColor;
+let lineColor;
 let isClicked;
 let canvas = $("#pixelCanvas");
 
@@ -19,7 +21,7 @@ function makeGrid() {
 	width = document.getElementById("inputWidth").value;
 	//check to see if values entered is greater than 50
 	if(height > 40 || width > 40) {
-		document.getElementById("output").innerHTML = "One or more of the sizes you have entered exceeds the limit of 50 pixels. Please enter a new value.";
+		document.getElementById("output").innerHTML = "One or more of the sizes you have entered exceeds the limit of 40 pixels. Please enter a new value.";
 	} else {
 		//adds number of rows equal to given height
 		for(let i = 0; i < height; i++) {
@@ -72,6 +74,17 @@ function erase() {
 	});
 }
 
+//When these functions are run, td:hover no longer works. Need to investigate or remove this feature.
+function backgroundColor() {
+	bgColor = document.getElementById("bgColorPicker").value;
+	$("td").css("background-color", bgColor);
+}
+
+function gridLineColor() {
+	lineColor = document.getElementById("gridLineColor").value;
+	$("table, tr, td").css("border-color", lineColor);
+}
+
 //run when a user releases the mouse
 $(document).on('mouseup', function(){
 	isClicked = false;
@@ -80,6 +93,8 @@ $(document).on('mouseup', function(){
 $("input[type='submit']").click(function(e) {
 	e.preventDefault(); //Required to avoid submit and page reload
 	makeGrid();
+	backgroundColor();
+	gridLineColor();
 	$(".settings-menu").hide();
 });
 
@@ -96,14 +111,14 @@ $("#clear").click(function() {
 });
 
 $("#grid-settings").click(function() {
-	$(".settings-menu").show();
+	$(".settings-menu").toggle();
 });
 
 $("#hide").click(function() {
 	$(".settings-menu").hide();
 });
 
-makeGrid(); //load a 15x15 grid on page load
+makeGrid(); //load a 10x10 grid on page load
 paint(); //paint function runs on page load so user does not have to click Paint button initially
 
 
