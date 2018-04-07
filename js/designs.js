@@ -13,24 +13,32 @@ let canvas = $("#pixelCanvas");
 
 $(".settings-menu").hide(); //hide settings menu on page load
 
+//https://stackoverflow.com/questions/24271242/prevent-user-from-typing-in-input-at-max-value
+//If value entered is greater than 40, it is rewritten as 40
+$('#inputHeight, #inputWidth').on('keyup keydown', function(e){
+console.log($(this).val() > 40)
+    if ($(this).val() > 40 
+        && e.keyCode !== 46 // keycode for delete
+        && e.keyCode !== 8 // keycode for backspace
+       ) {
+	       e.preventDefault();     
+	       $(this).val(40);
+    }
+});
+
 function makeGrid() {
 	//clears current grid each time user hits submit
 	canvas.html('');
 	//sets height and width based on user input
 	height = document.getElementById("inputHeight").value;
 	width = document.getElementById("inputWidth").value;
-	//check to see if values entered is greater than 50
-	if(height > 40 || width > 40) {
-		document.getElementById("output").innerHTML = "One or more of the sizes you have entered exceeds the limit of 40 pixels. Please enter a new value.";
-	} else {
-		//adds number of rows equal to given height
-		for(let i = 0; i < height; i++) {
-			canvas.append("<tr class='table-row'></tr>");
-		}
-		//adds table data element to each row based on given width
-		for(let j = 0; j < width; j++) {
-			$(".table-row").append("<td></td>");
-		}
+	//adds number of rows equal to given height
+	for(let i = 0; i < height; i++) {
+		canvas.append("<tr class='table-row'></tr>");
+	}
+	//adds table data element to each row based on given width
+	for(let j = 0; j < width; j++) {
+		$(".table-row").append("<td></td>");
 	}
 }
 
@@ -78,6 +86,7 @@ function erase() {
 function backgroundColor() {
 	bgColor = document.getElementById("bgColorPicker").value;
 	$("td").css("background-color", bgColor);
+	// $("td").addClass("bgHover");
 }
 
 function gridLineColor() {

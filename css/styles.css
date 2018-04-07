@@ -23,7 +23,7 @@ h1 {
     color: #fff;
     font-family: 'Varela Round', sans-serif;
     font-size: 2em;
-    margin: 25px 0;
+    margin: 20px 0;
 }
 
 table,
@@ -38,6 +38,10 @@ td:hover {
     background-color: #dfe6e9;
 }
 
+/*.bgHover:hover {
+    background-color: #dfe6e9 !important;
+}*/
+
 table {
     border-collapse: collapse;
     cursor: pointer;
@@ -46,14 +50,17 @@ table {
 }
 
 tr, td {
-    height: 3.5vmin;
+    /*height: 3.5vmin;
     min-width: 3.5vmin;
-    width: 3.5vmin;
+    width: 3.5vmin;*/
+    height: 7vmin;
+    min-width: 7vmin;
+    width: 7vmin;
 }
 
 input[type=number] {
     font-family: 'Varela Round', sans-serif;
-    width: 3em;
+    width: 3.5em;
 }
 
 input[type=color] {
@@ -76,31 +83,42 @@ Flex Styles
 
 .canvas-flex {
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: column;
     justify-content: center;
     position: relative;
-    /*margin-top: 350px;
-    position: absolute;
-    height: 300px;
-    width: 300px;*/
 }
 
 .button-flex {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
+    width: 100%;
 }
 
+.button-flex input {
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.15);
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.button-flex input:first-child {
+    margin-left: 0px;
+}
+
+.button-flex input:hover {
+    box-shadow: 0px 5px 30px rgba(0,0,0,0.3);
+    transition: ease 0.2s;
+}
 
 .canvas-button {
     background-color: #fff;
     border-radius: 5px;
-    margin-bottom: 10px;
-    margin-left: 20px;
+    margin-bottom: 20px;
     padding: 5px;
     height: 40px;
     width: 40px;
 }
+
 
 
 
@@ -124,6 +142,8 @@ form {
 
 .settings-menu {
     background: #fff;
+    border-radius: 10px;
+    color: #4b4b4b;
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -169,14 +189,45 @@ input[type=submit] {
     border: none;
     border-radius: 5px;
     color: #fff;
+    cursor: pointer;
     display: block;
+    font-family: 'Varela Round', sans-serif;
+    font-size: 1em;
     margin: 0 auto;
     padding: 5px;
     width: 5em;
 }
 
+input[type=submit]:hover {
+    background-color: #2d98da;
+    transition: ease 0.2s;
+}
 
 
+
+/*================================
+Respnsive CSS
+================================*/
+
+@media all and (min-width: 400px) {
+    tr, td {
+        height: 5vmin;
+        min-width: 5vmin;
+        width: 5vmin;
+    }
+}
+
+@media all and (min-width: 500px) {
+    tr, td {
+        height: 4vmin;
+        min-width: 4vmin;
+        width: 4vmin;
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+}
 
 
 
