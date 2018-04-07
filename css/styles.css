@@ -38,10 +38,6 @@ td:hover {
     background-color: #dfe6e9;
 }
 
-/*.bgHover:hover {
-    background-color: #dfe6e9 !important;
-}*/
-
 table {
     border-collapse: collapse;
     cursor: pointer;
@@ -50,9 +46,6 @@ table {
 }
 
 tr, td {
-    /*height: 3.5vmin;
-    min-width: 3.5vmin;
-    width: 3.5vmin;*/
     height: 7vmin;
     min-width: 7vmin;
     width: 7vmin;
@@ -95,30 +88,29 @@ Flex Styles
     width: 100%;
 }
 
-.button-flex input {
-    box-shadow: 0px 5px 15px rgba(0,0,0,0.15);
-    cursor: pointer;
-    margin-left: 20px;
-}
-
 .button-flex input:first-child {
     margin-left: 0px;
-}
-
-.button-flex input:hover {
-    box-shadow: 0px 5px 30px rgba(0,0,0,0.3);
-    transition: ease 0.2s;
 }
 
 .canvas-button {
     background-color: #fff;
     border-radius: 5px;
+    box-shadow: 0px 5px 15px rgba(75,75,75,0.15);
     margin-bottom: 20px;
+    margin-left: 20px;
     padding: 5px;
     height: 40px;
     width: 40px;
 }
 
+.canvas-button:hover {
+    box-shadow: 0px 5px 25px rgba(75,75,75,0.4);
+    transition: ease 0.2s;
+}
+
+.active {
+    background-color: #21D4FD;
+}
 
 
 
@@ -188,18 +180,21 @@ input[type=submit] {
     background-color: #45aaf2;
     border: none;
     border-radius: 5px;
+    box-shadow: 0px 5px 10px rgba(75,75,75,0.15);
     color: #fff;
     cursor: pointer;
     display: block;
     font-family: 'Varela Round', sans-serif;
     font-size: 1em;
     margin: 0 auto;
+    margin-top: 25px;
     padding: 5px;
     width: 5em;
 }
 
 input[type=submit]:hover {
     background-color: #2d98da;
+    box-shadow: 0px 5px 20px rgba(75,75,75,0.25);
     transition: ease 0.2s;
 }
 

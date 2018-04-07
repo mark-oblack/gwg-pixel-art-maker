@@ -1,8 +1,3 @@
-//UX Details
-//Set a max value for grid size and enforce it
-//With clear grid, can we remove reset button?
-//Hide grid size behind a settings menu
-
 let height;
 let width;
 let color;
@@ -11,9 +6,8 @@ let lineColor;
 let isClicked;
 let canvas = $("#pixelCanvas");
 
-$(".settings-menu").hide(); //hide settings menu on page load
-
-//https://stackoverflow.com/questions/24271242/prevent-user-from-typing-in-input-at-max-value
+//hide settings menu on page load
+$(".settings-menu").hide();
 //If value entered is greater than 40, it is rewritten as 40
 $('#inputHeight, #inputWidth').on('keyup keydown', function(e){
 console.log($(this).val() > 40)
@@ -82,11 +76,9 @@ function erase() {
 	});
 }
 
-//When these functions are run, td:hover no longer works. Need to investigate or remove this feature.
 function backgroundColor() {
 	bgColor = document.getElementById("bgColorPicker").value;
 	$("td").css("background-color", bgColor);
-	// $("td").addClass("bgHover");
 }
 
 function gridLineColor() {
@@ -108,10 +100,14 @@ $("input[type='submit']").click(function(e) {
 });
 
 $("#paint").click(function() {
+	$("input").removeClass("active");
+	$(this).toggleClass("active");
 	paint();
 });
 
 $("#erase").click(function() {
+	$("input").removeClass("active");
+	$(this).toggleClass("active");
 	erase();
 });
 
